@@ -16,7 +16,7 @@ RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
 	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 ADD https://raw.githubusercontent.com/CJBlake/feralhosting-freenas_lftp/master/dockerautosetup.sh /automaticsetup.sh
-RUN chmod +X "/automaticsetup.sh" 
+RUN chmod 770 "/automaticsetup.sh"
 RUN ["/bin/bash", "-c", "/automaticsetup.sh"]
     
 RUN mkdir -p /var/run/sshd
