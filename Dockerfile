@@ -6,10 +6,6 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
     
-# Add user
-    useradd -U -d /config -s /bin/false mediaplayer && \
-    usermod -G users mediaplayer && \
-
 EXPOSE 12135/tcp 12135/udp
 VOLUME ["/data", "/downloads"]
 
