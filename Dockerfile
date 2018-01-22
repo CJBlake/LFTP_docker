@@ -6,7 +6,6 @@ RUN apk add --no-cache \
 		lftp \
 		wget \
 		ca-certificates \
-		openssh 
-		openssh-client 
-	
+		openssh
+
 CMD bash
