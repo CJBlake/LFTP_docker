@@ -10,12 +10,6 @@ apt-get update && \
     useradd -U -d /config -s /bin/false mediaplayer && \
     usermod -G users mediaplayer && \
 
-# Setup directories
-    mkdir -p \
-      /data
-      /downloads
-    && \
-
 EXPOSE 12135/tcp 12135/udp
 VOLUME ["/data", "/downloads"]
 
