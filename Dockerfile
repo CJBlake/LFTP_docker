@@ -14,7 +14,7 @@ RUN echo 'root:"${ROOT_PASSWORD}"' |chpasswd
 
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
 	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN wget -q /automaticsetup.sh https://raw.githubusercontent.com/CJBlake/feralhosting-freenas_lftp/master/dockerautosetup.sh $$ \
+RUN /usr/bin/wget -q /automaticsetup.sh https://raw.githubusercontent.com/CJBlake/feralhosting-freenas_lftp/master/dockerautosetup.sh $$ \
     chmod +X /automaticsetup.sh $$ \
     bash /automaticsetup.sh $$ \
     
