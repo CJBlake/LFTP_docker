@@ -1,16 +1,10 @@
-FROM ubuntu:16.04
+FROM debian:jessie
 
-RUN \
-# Update and get dependencies
-    apt-get update && \
-    apt-get install -y \
-      nano \
-      bash \
-      lftp \
-      wget \
-      ca-certificates \
-      openssh \
-    && \
+apt-get update && \
+    apt-get -y --no-install-recommends install nano bash lftp wget openssh ca-certificates && \
+    apt-get clean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
     
 # Add user
     useradd -U -d /config -s /bin/false mediaplayer && \
@@ -22,15 +16,6 @@ RUN \
       /downloads
     && \
 
-# Cleanup
-    apt-get -y autoremove && \
-    apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    
 EXPOSE 12135/tcp 12135/udp
-VOLUME /data /downloads
+VOLUME ["/data", "/downloads"]
 
-ENV CHANGE_CONFIG_DIR_OWNERSHIP="true" \
-    HOME="/config"
-
-COPY root/ /
