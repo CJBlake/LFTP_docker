@@ -6,4 +6,7 @@ RUN apk add --no-cache \
 		lftp \
 		wget \
 		ca-certificates \
-		openssh
+		openssh 
+    \
+    # clean up cached artefacts
+    && rm -rf /var/cache/apk/*
