@@ -7,5 +7,3 @@ RUN apk add --no-cache \
 		wget \
 		ca-certificates \
 		openssh
-
-CMD bash
