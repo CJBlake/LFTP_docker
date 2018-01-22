@@ -8,4 +8,4 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
     
-CMD ["/etc/init.d/ssh start", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
