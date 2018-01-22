@@ -6,4 +6,4 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
     
-  ENTRYPOINT /bin/bash
+ENTRYPOINT /bin/bash
