@@ -1,0 +1,26 @@
+  lftp:
+    image: chrisgornall01/lftp
+    container_name: lftp
+    ports: 
+      - 12135:12135
+    volumes:
+      - /opt/appdata/lftp:/config
+      - /downloads:/downloads
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - LFTP_USER=mediaplayer
+      - LFTP_UID=1001
+      - LFTP_GROUP=mediaplayer
+      - LFTP_GID=1001
+      - FERAL_USERNAME="username"
+      - FERAL_PASSWORD="password"
+      - FERAL_HOST="host.feralhosting.com"
+      - REMOTE_MOVIE_DIR="~/movie-downloads-folder/completed/"
+      - REMOTE_TV_DIR="~/tv-downloads-folder/completed/"
+      - LOCAL_MOVIE_DIR="/downloads/movie_downloads/completed"
+      - LOCAL_TV_DIR="/downloads/tv_downloads/completed"
+      - TEMP_MOVIE_DIR="/downloads/movie_downloads/incomplete"
+      - TEMP_TV_DIR="/downloads/tv_downloads/incomplete"
+      - LFTP_LOG_DIR="/config"
+      - USER_PASSWORD=password
