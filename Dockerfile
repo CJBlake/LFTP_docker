@@ -20,4 +20,5 @@ COPY autosetup.sh /
 	
 EXPOSE 22
 
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD    ["/usr/sbin/sshd", "-D"]
