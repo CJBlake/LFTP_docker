@@ -17,7 +17,9 @@ RUN chmod 770 "/automaticsetup.sh"
 RUN mkdir -p /var/run/sshd
 
 COPY autosetup.sh /usr/local/bin/
-	
+
+RUN chmod 770 "/usr/local/bin/automaticsetup.sh"
+
 EXPOSE 22
 
 ENTRYPOINT ["autosetup.sh"]
