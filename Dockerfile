@@ -11,9 +11,6 @@ RUN apt-get update && \
 RUN sed -ri 's/^#PermitRootLogin\s+.*/PermitRootLogin no/' /etc/ssh/sshd_config && \
     sed -ri 's/^#Port\s+.*/Port 12135/' /etc/ssh/sshd_config
 
-ADD https://raw.githubusercontent.com/CJBlake/feralhosting-freenas_lftp/master/dockerautosetup.sh /automaticsetup.sh
-RUN chmod 770 "/automaticsetup.sh"
-    
 RUN mkdir -p /var/run/sshd
 
 COPY autosetup.sh /usr/local/bin/
