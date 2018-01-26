@@ -16,9 +16,9 @@ RUN chmod 770 "/automaticsetup.sh"
     
 RUN mkdir -p /var/run/sshd
 
-COPY autosetup.sh /
+COPY autosetup.sh /usr/local/bin/
 	
 EXPOSE 22
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["autosetup.sh"]
 CMD    ["/usr/sbin/sshd", "-D"]
