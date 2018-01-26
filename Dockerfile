@@ -15,6 +15,8 @@ ADD https://raw.githubusercontent.com/CJBlake/feralhosting-freenas_lftp/master/d
 RUN chmod 770 "/automaticsetup.sh"
     
 RUN mkdir -p /var/run/sshd
+
+COPY autosetup.sh /
 	
 EXPOSE 22
 
