@@ -18,4 +18,5 @@ COPY autosetup.sh /usr/local/bin/
 RUN chmod 770 "/usr/local/bin/autosetup.sh"
 
 EXPOSE 22
+ENTRYPOINT ["autosetup.sh"]
 CMD    ["/usr/sbin/sshd", "-D"]
