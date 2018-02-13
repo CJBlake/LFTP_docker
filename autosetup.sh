@@ -131,4 +131,4 @@ su "$uname" -c "chmod 770 /config/scripts/sync_tv_downloads.sh" # Make the scrip
 touch $log_dir/"setup.log"
 echo "time: $(date). - setup successful" >> $log_dir/"setup.log"
 
-exit 0
+exec "$@"
