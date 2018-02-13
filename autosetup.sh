@@ -128,7 +128,7 @@ INNERMASTER
 ENDMASTER"
 su "$uname" -c "chmod 770 /config/scripts/sync_tv_downloads.sh" # Make the script executable
 
-touch "$log_dir/setup.log"
-echo "time: $(date). - setup successful" >> "$log_dir/setup.log"
+touch $log_dir/"setup.log"
+echo "time: $(date). - setup successful" >> $log_dir/"setup.log"
 
 exit 0
