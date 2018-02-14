@@ -43,7 +43,7 @@ elif [[ "$1" == "music" ]]; then
 	remote_dir="$remote_music_dir"
 	local_dir="$local_music_dir"
 	temp_dir="$temp_music_dir"
-elif [[ "$1" == "tv" ]]; then
+elif [[ "$1" == "tvshow" ]]; then
 	remote_dir="$remote_tv_dir"
 	local_dir="$local_tv_dir"
 	temp_dir="$temp_tv_dir"
