@@ -49,6 +49,7 @@ elif [[ "$1" == "tvshow" ]]; then
 	temp_dir="$temp_tv_dir"
 else
 	echo "download type error"
+	exit
 fi
 H=$(date +%H)
 base_name="$(basename "$0")"
