@@ -62,8 +62,8 @@ then
 else
     touch "$lock_file"
     if (( 9 <= 10#$H && 10#$H < 24 )); then
-        upload_rate="100000"
-        download_rate="2000000"
+        upload_rate="0"
+        download_rate="0"
         echo "limit on"
     else
         upload_rate="0"
